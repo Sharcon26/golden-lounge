@@ -77,7 +77,7 @@ export default function BusinessCardPage() {
 
                 {/* Profile Section */}
                 <div className="flex flex-col items-center text-center mb-10">
-                    <div className="w-28 h-28 rounded-full border-2 border-primary/50 p-4 mb-6 shadow-[0_0_30px_rgba(245,158,11,0.3)] bg-black flex items-center justify-center">
+                    <div className="w-32 h-32 mb-4 bg-transparent flex items-center justify-center relative">
                         <div className="relative w-full h-full">
                             <Image
                                 src="/gold-logo.svg"
