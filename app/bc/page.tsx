@@ -77,15 +77,15 @@ export default function BusinessCardPage() {
 
                 {/* Profile Section */}
                 <div className="flex flex-col items-center text-center mb-10">
-                    <div className="w-28 h-28 rounded-full border-2 border-primary/50 p-1 mb-6 shadow-[0_0_30px_rgba(245,158,11,0.3)]">
-                        <div className="w-full h-full rounded-full overflow-hidden bg-black relative">
-                            {/* Ideally branding logo here. Using a placeholder or the project logo if available. 
-                                Since I don't have a guaranteed path, I'll use a text fallback or generic asset if needed.
-                                Better: Use the logo we have or just text.
-                            */}
-                            <div className="w-full h-full flex items-center justify-center bg-zinc-900 text-primary text-3xl font-bold font-serif">
-                                GD
-                            </div>
+                    <div className="w-28 h-28 rounded-full border-2 border-primary/50 p-4 mb-6 shadow-[0_0_30px_rgba(245,158,11,0.3)] bg-black flex items-center justify-center">
+                        <div className="relative w-full h-full">
+                            <Image
+                                src="/gold-logo.svg"
+                                alt="GD Lounge Logo"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
                         </div>
                     </div>
 
@@ -106,7 +106,7 @@ export default function BusinessCardPage() {
                             className="flex items-center gap-2 text-sm text-white/80 hover:text-primary transition-colors text-center"
                         >
                             <MapPin className="w-4 h-4" />
-                            <span>1234 Washington Ave, Miami Beach, FL 33139</span>
+                            <span>300 S Biscayne Blvd Suite C-202B, Miami, FL 33131</span>
                         </a>
 
                         {/* Socials Row */}

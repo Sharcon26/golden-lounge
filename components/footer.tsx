@@ -108,7 +108,7 @@ export function Footer() {
                     className="flex items-center gap-2 sm:gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     <MapPin className="w-4 h-4 text-primary/60 shrink-0" />
-                    <span>1234 Washington Ave,<br />Miami Beach, FL 33139</span>
+                    <span>300 S Biscayne Blvd Suite C-202B,<br />Miami, FL 33131</span>
                   </a>
                 </li>
               </ul>
