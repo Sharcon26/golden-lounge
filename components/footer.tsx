@@ -3,19 +3,20 @@ import Image from "next/image";
 import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from "lucide-react";
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Instagram, href: "https://www.instagram.com/gdlounge_miami/", label: "Instagram" },
+  { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61575799892987", label: "Facebook" },
+  // { icon: Twitter, href: "#", label: "Twitter" }, // Removed generic Twitter if not provided, or keep empty
 ];
 
 const quickLinks = [
-  { href: "#about", label: "About" },
-  { href: "#food", label: "Food" },
-  { href: "#cocktails", label: "Cocktails" },
+  { href: "/#about", label: "About" },
+  { href: "/#food", label: "Food" },
+  { href: "/#cocktails", label: "Cocktails" },
   // { href: "#gallery", label: "Gallery" },
   { href: "/news", label: "News" },
-  { href: "#vip", label: "VIP" },
+  { href: "/#vip", label: "VIP" },
   { href: "/contact", label: "Contact" },
+  { href: "/bc", label: "Quick Links" },
 ];
 
 export function Footer() {
@@ -43,6 +44,8 @@ export function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-full bg-background border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300"
                   aria-label={social.label}
                 >
@@ -99,13 +102,13 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://maps.app.goo.gl/odceBHiT9caqxArM7?g_st=ic"
+                    href="https://maps.app.goo.gl/UHtQmprFw7cEuEQc7"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 sm:gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     <MapPin className="w-4 h-4 text-primary/60 shrink-0" />
-                    <span>Downtown Miami</span>
+                    <span>1234 Washington Ave,<br />Miami Beach, FL 33139</span>
                   </a>
                 </li>
               </ul>

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Loader2, Share2, Instagram, Facebook, Mail } from "lucide-react";
+import { Loader2, Share2, Instagram, Facebook, Mail, MapPin, Phone } from "lucide-react";
 import { Footer } from "@/components/footer";
 
 type Biolink = {
@@ -96,14 +96,39 @@ export default function BusinessCardPage() {
                         An electric fusion of high-energy nightlife and sophisticated relaxation in Miami.
                     </p>
 
-                    {/* Social Icons */}
-                    <div className="flex items-center gap-4 mt-6">
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-white/10 hover:text-primary transition-colors">
-                            <Instagram className="w-5 h-5" />
+                    {/* Social Icons & Contacts */}
+                    <div className="flex flex-col items-center gap-4 mt-4 w-full">
+                        {/* Address */}
+                        <a
+                            href="https://maps.app.goo.gl/UHtQmprFw7cEuEQc7"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-sm text-white/80 hover:text-primary transition-colors text-center"
+                        >
+                            <MapPin className="w-4 h-4" />
+                            <span>1234 Washington Ave, Miami Beach, FL 33139</span>
                         </a>
-                        <a href="mailto:info@gdmiami.com" className="p-2 rounded-full bg-white/5 hover:bg-white/10 hover:text-primary transition-colors">
-                            <Mail className="w-5 h-5" />
-                        </a>
+
+                        {/* Socials Row */}
+                        <div className="flex items-center gap-4">
+                            <a href="https://www.instagram.com/gdlounge_miami/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 hover:bg-white/10 hover:text-primary transition-colors">
+                                <Instagram className="w-5 h-5" />
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61575799892987" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 hover:bg-white/10 hover:text-primary transition-colors">
+                                <Facebook className="w-5 h-5" />
+                            </a>
+                            <a href="mailto:reservations@gdmiami.com" className="p-3 rounded-full bg-white/5 hover:bg-white/10 hover:text-primary transition-colors">
+                                <Mail className="w-5 h-5" />
+                            </a>
+                            <a href="tel:+13052491222" className="p-3 rounded-full bg-white/5 hover:bg-white/10 hover:text-primary transition-colors">
+                                <Phone className="w-5 h-5" />
+                            </a>
+                        </div>
+                        {/* Contact Text */}
+                        <div className="flex flex-col items-center gap-1 text-sm text-white/60">
+                            <a href="tel:+13052491222" className="hover:text-white transition-colors">+1 305 249 1222</a>
+                            <a href="mailto:reservations@gdmiami.com" className="hover:text-white transition-colors">reservations@gdmiami.com</a>
+                        </div>
                     </div>
                 </div>
 
