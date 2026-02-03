@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "title": "Book Private Party",
+        "url": "/private-party",
+        "order": 1,
+        "active": true
+    },
+    {
+        "id": "2",
+        "title": "Secret Room",
+        "url": "https://www.eventbrite.com/e/secret-room-at-gd-lounge-tickets-1981588907766",
+        "order": 2,
+        "active": true
+    },
+    {
+        "id": "3",
+        "title": "Our Website",
+        "url": "/",
+        "order": 3,
+        "active": true
+    },
+    {
+        "id": "4",
+        "title": "Reserve Your Table",
+        "url": "https://www.sevenrooms.com/reservations/gdlounge",
+        "order": 4,
+        "active": true
+    }
+]

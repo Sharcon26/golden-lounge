@@ -1,0 +1,172 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Loader2, Share2, Instagram, Facebook, Mail } from "lucide-react";
+import { Footer } from "@/components/footer";
+
+type Biolink = {
+    id: string;
+    title: string;
+    url: string;
+    order: number;
+    active: boolean;
+};
+
+export default function BusinessCardPage() {
+    const [links, setLinks] = useState<Biolink[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchLinks = async () => {
+            try {
+                const res = await fetch("/api/links");
+                if (res.ok) {
+                    const data = await res.json();
+                    setLinks(data.filter((l: Biolink) => l.active));
+                }
+            } catch (error) {
+                console.error("Failed to fetch links", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchLinks();
+    }, []);
+
+    const handleShare = async () => {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: "GD Lounge",
+                    text: "Check out GD Lounge links",
+                    url: window.location.href,
+                });
+            } catch (err) {
+                console.log("Error sharing", err);
+            }
+        } else {
+            // Fallback copy to clipboard or similar
+            navigator.clipboard.writeText(window.location.href);
+            alert("Link copied to clipboard!");
+        }
+    };
+
+    return (
+        <main className="min-h-screen bg-black text-white flex flex-col items-center relative overflow-hidden">
+            {/* Background elements */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px]" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-900/20 rounded-full blur-[120px]" />
+            </div>
+
+            <div className="z-10 w-full max-w-md px-6 py-12 flex-grow flex flex-col items-center">
+                {/* Header Actions */}
+                <div className="w-full flex justify-end mb-4">
+                    <Button
+                        variant="secondary"
+                        size="icon"
+                        className="rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white"
+                        onClick={handleShare}
+                    >
+                        <Share2 className="w-5 h-5" />
+                    </Button>
+                </div>
+
+                {/* Profile Section */}
+                <div className="flex flex-col items-center text-center mb-10">
+                    <div className="w-28 h-28 rounded-full border-2 border-primary/50 p-1 mb-6 shadow-[0_0_30px_rgba(245,158,11,0.3)]">
+                        <div className="w-full h-full rounded-full overflow-hidden bg-black relative">
+                            {/* Ideally branding logo here. Using a placeholder or the project logo if available. 
+                                Since I don't have a guaranteed path, I'll use a text fallback or generic asset if needed.
+                                Better: Use the logo we have or just text.
+                            */}
+                            <div className="w-full h-full flex items-center justify-center bg-zinc-900 text-primary text-3xl font-bold font-serif">
+                                GD
+                            </div>
+                        </div>
+                    </div>
+
+                    <h1 className="text-2xl font-bold font-serif tracking-wide text-white mb-2">
+                        GD Lounge
+                    </h1>
+                    <p className="text-sm text-white/60 max-w-xs leading-relaxed">
+                        An electric fusion of high-energy nightlife and sophisticated relaxation in Miami.
+                    </p>
+
+                    {/* Social Icons */}
+                    <div className="flex items-center gap-4 mt-6">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-white/10 hover:text-primary transition-colors">
+                            <Instagram className="w-5 h-5" />
+                        </a>
+                        <a href="mailto:info@gdmiami.com" className="p-2 rounded-full bg-white/5 hover:bg-white/10 hover:text-primary transition-colors">
+                            <Mail className="w-5 h-5" />
+                        </a>
+                    </div>
+                </div>
+
+                {/* Links Section */}
+                <div className="w-full space-y-4">
+                    {loading ? (
+                        <div className="flex justify-center py-10">
+                            <Loader2 className="w-8 h-8 text-primary animate-spin" />
+                        </div>
+                    ) : (
+                        links.map((link) => (
+                            <a
+                                key={link.id}
+                                href={link.url}
+                                target={link.url.startsWith('/') ? undefined : "_blank"}
+                                rel={link.url.startsWith('/') ? undefined : "noopener noreferrer"}
+                                className="group block"
+                            >
+                                <div className={`
+                                    relative w-full p-4 rounded-xl backdrop-blur-md border border-white/10
+                                    transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:shadow-[0_0_20px_rgba(245,158,11,0.15)]
+                                    flex items-center justify-between
+                                    bg-white/5 hover:bg-white/10
+                                    ${link.title.includes('Private Party') ? 'border-primary/30 bg-primary/5' : ''}
+                                `}>
+                                    <div className="flex items-center gap-4">
+                                        {/* Optional: Icon logic if we had icons in JSON. For now, a generic dot or specific icon for known titles. */}
+                                        <div className="w-10 h-10 rounded-full bg-black/40 flex items-center justify-center text-primary/80">
+                                            {getIconForTitle(link.title)}
+                                        </div>
+                                        <span className="font-medium text-sm sm:text-base text-white/90 group-hover:text-white">
+                                            {link.title}
+                                        </span>
+                                    </div>
+
+                                    {/* Small arrow or dots */}
+                                    <div className="opacity-50 group-hover:opacity-100 transition-opacity">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-white/50 group-hover:bg-primary" />
+                                    </div>
+                                </div>
+                            </a>
+                        ))
+                    )}
+                </div>
+            </div>
+
+            <div className="w-full z-10 mt-auto pb-6">
+                <p className="text-center text-[10px] text-white/30 uppercase tracking-widest">
+                    GD Lounge © {new Date().getFullYear()}
+                </p>
+            </div>
+        </main>
+    );
+}
+
+// Helper for icons based on title keywords
+import { Calendar, Crown, Globe, Utensils, Ticket } from "lucide-react";
+
+function getIconForTitle(title: string) {
+    const t = title.toLowerCase();
+    if (t.includes("private")) return <Crown className="w-5 h-5" />;
+    if (t.includes("website") || t.includes("home")) return <Globe className="w-5 h-5" />;
+    if (t.includes("reserve") || t.includes("table") || t.includes("book")) return <Utensils className="w-5 h-5" />;
+    if (t.includes("ticket") || t.includes("event") || t.includes("room")) return <Ticket className="w-5 h-5" />;
+    return <Calendar className="w-5 h-5" />;
+}

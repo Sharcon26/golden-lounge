@@ -73,8 +73,8 @@ export function MediaCarousel({
         }
     };
 
-    const prevRef = useRef<HTMLButtonElement>(null);
-    const nextRef = useRef<HTMLButtonElement>(null);
+    const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(null);
+    const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(null);
 
     return (
         <div className={`relative group rounded-[2rem] overflow-hidden shadow-2xl bg-black ${className}`}>
@@ -84,15 +84,9 @@ export function MediaCarousel({
                 modules={[Navigation, Pagination]}
                 spaceBetween={0}
                 slidesPerView={1}
-                onBeforeInit={(swiper) => {
-                    // @ts-ignore
-                    swiper.params.navigation.prevEl = prevRef.current;
-                    // @ts-ignore
-                    swiper.params.navigation.nextEl = nextRef.current;
-                }}
                 navigation={{
-                    prevEl: prevRef.current,
-                    nextEl: nextRef.current,
+                    prevEl,
+                    nextEl,
                 }}
                 pagination={{ clickable: true, dynamicBullets: true }}
                 loop={loop}
@@ -107,12 +101,6 @@ export function MediaCarousel({
                     // Initial check for video on mount
                     setTimeout(() => {
                         handleSlideChange(swiper);
-                        // Re-initialize navigation after mount to ensure buttons work
-                        if (swiper.params.navigation && typeof swiper.params.navigation !== 'boolean') {
-                            swiper.navigation.destroy();
-                            swiper.navigation.init();
-                            swiper.navigation.update();
-                        }
                     }, 100);
                 }}
                 onSlideChange={handleSlideChange}
@@ -175,24 +163,23 @@ export function MediaCarousel({
             {media.length > 1 && (
                 <>
                     <button
-                        ref={prevRef}
+                        ref={(node) => setPrevEl(node)}
                         type="button"
                         aria-label="Previous slide"
-                        className="custom-swiper-button-prev absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100"
+                        className="custom-swiper-button-prev absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0 disabled:cursor-not-allowed"
                     >
                         <ChevronLeft className="w-5 h-5" />
                     </button>
                     <button
-                        ref={nextRef}
+                        ref={(node) => setNextEl(node)}
                         type="button"
                         aria-label="Next slide"
-                        className="custom-swiper-button-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100"
+                        className="custom-swiper-button-next absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white cursor-pointer hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0 disabled:cursor-not-allowed"
                     >
                         <ChevronRight className="w-5 h-5" />
                     </button>
                 </>
             )}
-
 
         </div>
     );
