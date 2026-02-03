@@ -185,15 +185,15 @@ export default function BusinessCardPage() {
 }
 
 // Helper for icons based on title keywords
-import { Calendar, Crown, Globe, Utensils, Ticket, Wine } from "lucide-react";
-import { ChampagneBucket } from "@/components/icons/champagne-bucket";
+import { Calendar, Crown, Globe, Utensils, Ticket, Martini } from "lucide-react";
+// import { ChampagneBucket } from "@/components/icons/champagne-bucket"; // Keeping file but unused for now
 
 function getIconForTitle(title: string) {
     const t = title.toLowerCase();
     if (t.includes("private")) return <Crown className="w-5 h-5" />;
     if (t.includes("website") || t.includes("home")) return <Globe className="w-5 h-5" />;
-    // Use Champagne bucket for reservation/table
-    if (t.includes("reserve") || t.includes("table") || t.includes("book")) return <ChampagneBucket className="w-5 h-5" />;
+    // Use Cocktail (Martini) for reservation/table
+    if (t.includes("reserve") || t.includes("table") || t.includes("book")) return <Martini className="w-5 h-5" />;
     if (t.includes("ticket") || t.includes("event") || t.includes("room")) return <Ticket className="w-5 h-5" />;
     return <Calendar className="w-5 h-5" />;
 }
