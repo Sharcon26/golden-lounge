@@ -53,11 +53,11 @@ export default function Home() {
 
       {/* Keeping these for additional context/SEO, can be removed if client counts them as clutter, but usually good to keep */}
       <LazyLoadSection className="min-h-[400px]">
-        <FoodSection />
+        <CocktailsSection />
       </LazyLoadSection>
 
       <LazyLoadSection className="min-h-[400px]">
-        <CocktailsSection />
+        <FoodSection />
       </LazyLoadSection>
 
       <LazyLoadSection className="min-h-[300px]">
