@@ -1,139 +1,95 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import { Clock, Ticket } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import "swiper/css";
-
-type Event = {
-  id: string;
-  title: string;
-  date: string;
-  price: string;
-  image: string;
-  ticket_url: string;
-};
-
-const EVENTS: Event[] = [
-  {
-    id: "evt-1",
-    title: "Secret Room",
-    date: "February 6",
-    price: "$100",
-    image: "/Events/11111111111.png",
-    ticket_url: "https://www.eventbrite.com/e/secret-room-at-gd-lounge-tickets-1978760584174"
-  },
-  {
-    id: "evt-2",
-    title: "Secret Room",
-    date: "February 13",
-    price: "$100",
-    image: "/Events/2222.png",
-    ticket_url: "https://www.eventbrite.com/e/secret-room-at-gd-lounge-tickets-1978760584174"
-  },
-  {
-    id: "evt-3",
-    title: "Secret Room",
-    date: "February 20",
-    price: "$100",
-    image: "/Events/3333333.png",
-    ticket_url: "https://www.eventbrite.com/e/secret-room-at-gd-lounge-tickets-1978760584174"
-  }
-];
 
 export function EventsSection() {
-  const EventCard = ({ event }: { event: Event }) => (
-    <div
-      className="relative aspect-[3/4.5] rounded-[2rem] overflow-hidden group shadow-[0_10px_30px_rgba(0,0,0,0.5)] cursor-pointer"
-      onClick={() => window.open(event.ticket_url, "_blank", "noopener,noreferrer")}
-    >
-      {/* Background Image */}
-      <Image
-        src={event.image}
-        alt={event.title}
-        fill
-        className="object-cover transition-transform duration-700 group-hover:scale-110"
-        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-      />
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
-
-      {/* Content */}
-      <div className="absolute inset-0 p-6 flex flex-col justify-end">
-        <div className="transform transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="px-3 py-1 rounded-full bg-primary/20 border border-primary/50 text-primary text-xs font-bold uppercase tracking-wider backdrop-blur-md">
-              {event.date}
-            </span>
-          </div>
-
-          <h3 className="text-3xl font-bold text-white mb-2 font-serif">
-            {event.title}
-          </h3>
-
-          <div className="flex items-center gap-4 text-white/80 text-sm mb-4">
-            <span className="font-semibold text-primary text-lg">{event.price}</span>
-            <span>•</span>
-            <span className="flex items-center gap-1">
-              Tickets Available
-            </span>
-          </div>
-
-          <Button
-            className="w-full rounded-full font-bold transition-all shadow-lg hover:shadow-primary/25"
-          >
-            Get Tickets
-          </Button>
-        </div>
-      </div>
-
-      {/* Glass Border Effect */}
-      <div className="absolute inset-0 border border-white/10 rounded-[2rem] pointer-events-none group-hover:border-primary/50 transition-colors duration-300" />
-    </div>
-  );
-
   return (
-    <section id="events" className="py-24 lg:py-32 bg-background border-b border-white/5">
+    <section id="events" className="py-24 lg:py-32 bg-background relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-        {/* Header */}
-        <div className="mb-12 md:mb-16">
-          <span className="text-sm font-semibold text-primary uppercase tracking-widest">
-            Exclusive Parties
-          </span>
-          <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground font-serif tracking-tight">
-            Upcoming Events
-          </h2>
+          {/* Left Column: Text Content */}
+          <div className="space-y-8">
+            <div>
+              <span className="text-sm font-semibold text-primary uppercase tracking-widest">
+                Upcoming Event
+              </span>
+              <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground font-serif tracking-tight leading-tight">
+                Secret Room <br />
+                <span className="text-primary">at GD Lounge</span>
+              </h2>
+            </div>
+
+            <div className="space-y-6 text-lg text-white/80 font-light leading-relaxed">
+              <p className="text-xl font-medium text-white">
+                An immersive, after-dark performance directed by House of Matilda.
+              </p>
+              <p>
+                This is not a traditional show. It’s a fully immersive experience where tension, movement, sound, and emotion unfold around you. Intimate. Cinematic. Unfiltered. The atmosphere builds slowly, pulling you deeper until the final moment lands with full intensity.
+              </p>
+              <p>
+                Created for guests who want more than entertainment — they want to feel it.
+              </p>
+              <p className="italic text-primary/90">
+                Where elegance fades and instinct takes over.
+              </p>
+            </div>
+
+            <div className="pt-4 border-t border-white/10 space-y-6">
+              <h3 className="text-2xl font-serif font-bold text-white">Event Details</h3>
+              <ul className="space-y-3 text-white/90">
+                <li className="flex items-start gap-3">
+                  <span className="text-primary">•</span>
+                  <span><strong>Dates:</strong> February 6, 13 & 20</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-primary">•</span>
+                  <span><strong>Venue:</strong> GD Lounge, Downtown Miami</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-primary">•</span>
+                  <span><strong>Ticket price:</strong> $100 per person</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-primary">•</span>
+                  <span><strong>Included:</strong> Champagne + cocktail after the show</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="pt-2">
+              <p className="text-sm text-white/60 tracking-widest uppercase mb-6">
+                Limited seating. One night. One experience.
+              </p>
+              <Button
+                onClick={() => window.open("https://www.eventbrite.com/e/secret-room-at-gd-lounge-tickets-1978760584174", "_blank")}
+                className="w-full sm:w-auto px-8 py-6 text-lg rounded-full"
+              >
+                Get Tickets
+              </Button>
+            </div>
+          </div>
+
+          {/* Right Column: Vertical Video */}
+          <div className="relative aspect-[9/16] w-full max-w-md mx-auto lg:max-w-none rounded-[2rem] overflow-hidden shadow-2xl shadow-black/50 border border-white/5">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/Events/IMG_1427.MOV" type="video/quicktime" />
+              <source src="/Events/IMG_1427.MOV" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            {/* Overlay Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+          </div>
+
         </div>
-
-        {/* Desktop Grid (Hidden on Mobile) */}
-        <div className="hidden md:grid md:grid-cols-3 gap-8">
-          {EVENTS.map((event) => (
-            <EventCard key={event.id} event={event} />
-          ))}
-        </div>
-
-        {/* Mobile Swiper (Hidden on Desktop) */}
-        <div className="md:hidden -mx-4 px-4">
-          <Swiper
-            spaceBetween={20}
-            slidesPerView={1.15}
-            centeredSlides={false}
-            loop={false}
-            className="pb-10"
-          >
-            {EVENTS.map((event) => (
-              <SwiperSlide key={event.id}>
-                <EventCard event={event} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-
       </div>
     </section>
   );
