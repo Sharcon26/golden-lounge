@@ -20,6 +20,8 @@ const FEATURES = [
     "Live Entertainment",
     "Immersive Light Show",
     "Late Night Dinner",
+    "Bottle Service",
+    "VIP Zone",
 ];
 
 export function LoungeSection() {
