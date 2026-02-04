@@ -139,12 +139,8 @@ export async function POST(request: Request) {
         }
 
         // 🔗 Webhook Integration
-        let webhookUrl = "";
-        if (body.formType === "vip") {
-            webhookUrl = "https://services.leadconnectorhq.com/hooks/YIKVmEJTogLupj8ffFeN/webhook-trigger/cfd6e425-6f75-48bb-a5af-b0f57f1f5448";
-        } else if (body.formType === "private_party") {
-            webhookUrl = "https://services.leadconnectorhq.com/hooks/YIKVmEJTogLupj8ffFeN/webhook-trigger/b9f44074-bb38-449c-a978-62785dba48fb";
-        }
+        // Global webhook for all forms (VIP, Private Party, etc.)
+        const webhookUrl = "https://services.leadconnectorhq.com/hooks/5vrBDjurTDJOrrfbV6JE/webhook-trigger/bf3c3d18-9a88-466c-940f-dad7804cc9fd";
 
         if (webhookUrl) {
             try {
