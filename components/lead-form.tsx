@@ -268,7 +268,7 @@ export function LeadForm({
                     <Button
                         type="submit"
                         disabled={isLoading}
-                        className="w-full h-10 text-base font-bold rounded-lg mt-1 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-300"
+                        className="w-full h-10 text-base font-bold rounded-lg mt-1 transition-all duration-300"
                     >
                         {isLoading ? "Sending..." : buttonText}
                     </Button>

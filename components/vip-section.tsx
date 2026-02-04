@@ -58,7 +58,7 @@ export function VipSection() {
             <Button
               onClick={() => setIsModalOpen(true)}
               size="lg"
-              className="rounded-full px-8 py-6 text-lg font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all hover:scale-105"
+              className="rounded-full px-8 py-6 text-lg font-semibold transition-all hover:scale-105"
             >
               Book VIP Room
             </Button>

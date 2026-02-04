@@ -66,7 +66,7 @@ export function LoungeSection() {
                         <Button
                             asChild
                             size="lg"
-                            className="rounded-full px-8 py-6 text-lg font-semibold bg-primary text-black hover:bg-primary/90 shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all hover:scale-105 w-full sm:w-auto"
+                            className="rounded-full px-8 py-6 text-lg font-semibold transition-all hover:scale-105 w-full sm:w-auto"
                         >
                             <a href="https://www.sevenrooms.com/reservations/gdlounge" target="_blank" rel="noopener noreferrer">
                                 Reserve a Table

@@ -67,14 +67,14 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <Button
               variant="outline"
-              className="border-primary/50 text-white hover:bg-primary/20 hover:border-primary hover:text-primary rounded-full px-5"
+              className="rounded-full px-5"
               onClick={() => setIsPrivatePartyModalOpen(true)}
             >
               Private Party
             </Button>
             <Button
               asChild
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6"
+              className="rounded-full px-6"
             >
               <a href={RESERVE_URL} target="_blank" rel="noopener noreferrer">
                 Reserve
@@ -111,7 +111,7 @@ export function Header() {
 
             <Button
               variant="outline"
-              className="border-white/20 text-foreground hover:bg-white/10 hover:border-white/40 rounded-full mt-2"
+              className="rounded-full mt-2"
               onClick={() => {
                 setIsMenuOpen(false);
                 setIsPrivatePartyModalOpen(true);
@@ -119,7 +119,7 @@ export function Header() {
             >
               Private Party
             </Button>
-            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full">
+            <Button asChild className="rounded-full">
               <a
                 href={RESERVE_URL}
                 target="_blank"

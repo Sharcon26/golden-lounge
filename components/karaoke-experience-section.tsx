@@ -66,7 +66,7 @@ export function KaraokeExperienceSection() {
                         <Button
                             onClick={() => setIsModalOpen(true)}
                             size="lg"
-                            className="rounded-full px-8 py-6 text-lg font-semibold bg-primary text-black hover:bg-primary/90 shadow-[0_0_20px_rgba(245,158,11,0.3)] transition-all hover:scale-105"
+                            className="rounded-full px-8 py-6 text-lg font-semibold transition-all hover:scale-105"
                         >
                             Book Karaoke
                         </Button>
