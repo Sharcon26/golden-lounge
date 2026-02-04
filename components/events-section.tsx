@@ -72,16 +72,18 @@ export function EventsSection() {
           </div>
 
           {/* Right Column: Vertical Video */}
-          <div className="relative aspect-[9/16] w-full max-w-md mx-auto lg:max-w-none rounded-[2rem] overflow-hidden shadow-2xl shadow-black/50 border border-white/5">
+          <div className="relative aspect-[9/16] w-full max-w-md mx-auto lg:max-w-none rounded-[2rem] overflow-hidden shadow-2xl shadow-black/50 border border-white/5 bg-black">
             <video
               autoPlay
               loop
               muted
               playsInline
+              controls={false}
+              poster="/Events/11111111111.png"
               className="absolute inset-0 w-full h-full object-cover"
             >
-              <source src="/Events/IMG_1427.MOV" type="video/quicktime" />
               <source src="/Events/IMG_1427.MOV" type="video/mp4" />
+              <source src="/Events/IMG_1427.MOV" type="video/quicktime" />
               Your browser does not support the video tag.
             </video>
 
