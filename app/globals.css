@@ -11,22 +11,22 @@
   --card-foreground: #E5E7EB;
   --popover: #0B1026;
   --popover-foreground: #E5E7EB;
-  /* Neon Gold */
-  --primary: #FFCC00;
+  /* Minimalist Gold Theme */
+  --primary: #D19D5C;
   --primary-foreground: #000000;
   --secondary: #0B1026;
   --secondary-foreground: #E5E7EB;
   --muted: #0B1026;
   --muted-foreground: #94A3B8;
-  --accent: #FFCC00;
+  --accent: #D19D5C;
   --accent-foreground: #070B1A;
   --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
   --border: #1F2A44;
   --input: #1F2A44;
-  --ring: #FFCC00;
+  --ring: #D19D5C;
   --chart-1: #7C3AED;
-  --chart-2: #FFCC00;
+  --chart-2: #D19D5C;
   --chart-3: #10B981;
   --chart-4: #3B82F6;
   --chart-5: #EC4899;
@@ -38,39 +38,26 @@
   --sidebar-accent: #1F2A44;
   --sidebar-accent-foreground: #E5E7EB;
   --sidebar-border: #1F2A44;
-  /* Neon Glow Utilities */
-  /* Refined to match "GD LOUNGE MIAMI" sign: White-hot center (#FFFCE5) with gold glow */
-  --neon-glow-mobile: 0 0 10px rgba(255, 252, 229, 0.8), 0 0 20px rgba(255, 204, 0, 0.5);
-  --neon-glow-desktop: 0 0 5px #FFFCE5, 0 0 10px #FFFCE5, 0 0 20px var(--primary);
+  /* Minimalist Utilities - Retaining names for compatibility but removing neon effects */
+  --neon-glow-mobile: none;
+  --neon-glow-desktop: none;
 
-  --neon-box-glow-mobile: 0 0 10px rgba(255, 252, 229, 0.6), 0 0 30px rgba(255, 204, 0, 0.3) inset;
-  --neon-box-glow: 0 0 5px #FFFCE5, 0 0 10px var(--primary) inset;
+  --neon-box-glow-mobile: none;
+  --neon-box-glow: none;
 }
 
 @utility neon-text {
   font-family: var(--font-outfit);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-
-  /* Mobile: Solid & Crisp (Fixes blur) */
+  font-weight: 500;
   color: var(--primary);
-  text-shadow: var(--neon-glow-mobile);
-
-  /* Desktop: Hollow & Glowing (Restores original style) */
-  @media (min-width: 768px) {
-    color: transparent;
-    -webkit-text-stroke: 1px var(--primary);
-    text-shadow: var(--neon-glow-desktop);
-  }
+  /* Removed all text-shadow/stroke for minimalist look */
 }
 
 @utility neon-box {
-  border: 1px solid #FFFCE5;
-  box-shadow: var(--neon-box-glow-mobile);
-
-  @media (min-width: 768px) {
-    box-shadow: var(--neon-box-glow);
-  }
+  border: 1px solid var(--primary);
+  /* Removed box-shadow for minimalist look */
 }
 
 @utility neon-solid {
