@@ -63,7 +63,7 @@ export function EventsSection() {
                 Limited seating. One night. One experience.
               </p>
               <Button
-                onClick={() => window.open("https://www.eventbrite.com/e/secret-room-at-gd-lounge-tickets-1978760584174", "_blank")}
+                onClick={() => window.open("https://www.eventbrite.com/e/secret-room-at-gd-lounge-tickets-1981588907766", "_blank")}
                 className="w-full sm:w-auto px-8 py-6 text-lg rounded-full"
               >
                 Get Tickets
