@@ -23,7 +23,7 @@ const EVENTS: Event[] = [
     title: "Secret Room",
     date: "February 6",
     price: "$100",
-    image: "/Events/Ins Post 1.png",
+    image: "/Events/1111111.png",
     ticket_url: "https://www.eventbrite.com/e/secret-room-at-gd-lounge-tickets-1978760584174"
   },
   {
@@ -31,7 +31,7 @@ const EVENTS: Event[] = [
     title: "Secret Room",
     date: "February 13",
     price: "$100",
-    image: "/Events/Ins Post 2.png",
+    image: "/Events/2222.png",
     ticket_url: "https://www.eventbrite.com/e/secret-room-at-gd-lounge-tickets-1978760584174"
   },
   {
@@ -39,7 +39,7 @@ const EVENTS: Event[] = [
     title: "Secret Room",
     date: "February 20",
     price: "$100",
-    image: "/Events/Ins Post 3.png",
+    image: "/Events/3333333.png",
     ticket_url: "https://www.eventbrite.com/e/secret-room-at-gd-lounge-tickets-1978760584174"
   }
 ];
