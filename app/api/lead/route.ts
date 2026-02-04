@@ -113,7 +113,12 @@ export async function POST(request: Request) {
                 name: body.name || null,
             },
             message: body.message || null,
-            eventDate: body.date ? new Date(body.date).toISOString() : null,
+            eventDate: body.date
+                ? (() => {
+                    const [year, month, day] = body.date.split("-");
+                    return `${month}/${day}/${year}`;
+                })()
+                : null,
             guestCount: body.guests || null,
             meta: {
                 userAgent: request.headers.get("user-agent"),
