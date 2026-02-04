@@ -23,7 +23,7 @@ const EVENTS: Event[] = [
     title: "Secret Room",
     date: "February 6",
     price: "$100",
-    image: "/Events/1111111.png",
+    image: "/Events/11111111111.png",
     ticket_url: "https://www.eventbrite.com/e/secret-room-at-gd-lounge-tickets-1978760584174"
   },
   {
