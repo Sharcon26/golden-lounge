@@ -10,7 +10,7 @@ export function EventsSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* Left Column: Text Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 order-2 lg:order-1">
             <div>
               <span className="text-sm font-semibold text-primary uppercase tracking-widest">
                 Upcoming Event
@@ -72,7 +72,7 @@ export function EventsSection() {
           </div>
 
           {/* Right Column: Vertical Video */}
-          <div className="relative aspect-[9/16] w-full max-w-md mx-auto lg:max-w-none rounded-[2rem] overflow-hidden shadow-2xl shadow-black/50 border border-white/5 bg-black">
+          <div className="relative aspect-[9/16] w-full max-w-md mx-auto lg:max-w-none rounded-[2rem] overflow-hidden shadow-2xl shadow-black/50 border border-white/5 bg-black order-1 lg:order-2">
             <video
               autoPlay
               loop
