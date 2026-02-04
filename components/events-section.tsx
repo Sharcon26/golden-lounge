@@ -120,15 +120,10 @@ export function EventsSection() {
         {/* Mobile Swiper (Hidden on Desktop) */}
         <div className="md:hidden -mx-4 px-4">
           <Swiper
-            modules={[Autoplay]}
             spaceBetween={20}
             slidesPerView={1.15}
-            centeredSlides={true}
-            loop={true}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
+            centeredSlides={false}
+            loop={false}
             className="pb-10"
           >
             {EVENTS.map((event) => (
