@@ -39,21 +39,37 @@
   --sidebar-accent-foreground: #E5E7EB;
   --sidebar-border: #1F2A44;
   /* Neon Glow Utilities */
-  --neon-glow: 0 0 10px rgba(255, 204, 0, 0.6), 0 0 20px rgba(255, 204, 0, 0.4);
-  --neon-box-glow: 0 0 10px rgba(255, 204, 0, 0.4);
+  --neon-glow-mobile: 0 0 5px rgba(255, 204, 0, 0.4);
+  --neon-glow-desktop: 0 0 5px var(--primary), 0 0 10px var(--primary), 0 0 20px var(--primary);
+
+  --neon-box-glow-mobile: 0 0 5px rgba(255, 204, 0, 0.3);
+  --neon-box-glow: 0 0 5px var(--primary), 0 0 10px var(--primary) inset;
 }
 
 @utility neon-text {
   font-family: var(--font-outfit);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+
+  /* Mobile: Solid & Crisp (Fixes blur) */
   color: var(--primary);
-  text-shadow: var(--neon-glow);
+  text-shadow: var(--neon-glow-mobile);
+
+  /* Desktop: Hollow & Glowing (Restores original style) */
+  @media (min-width: 768px) {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--primary);
+    text-shadow: var(--neon-glow-desktop);
+  }
 }
 
 @utility neon-box {
   border: 1px solid var(--primary);
-  box-shadow: var(--neon-box-glow);
+  box-shadow: var(--neon-box-glow-mobile);
+
+  @media (min-width: 768px) {
+    box-shadow: var(--neon-box-glow);
+  }
 }
 
 @utility neon-solid {
