@@ -39,16 +39,15 @@
   --sidebar-accent-foreground: #E5E7EB;
   --sidebar-border: #1F2A44;
   /* Neon Glow Utilities */
-  --neon-glow: 0 0 5px var(--primary), 0 0 10px var(--primary), 0 0 20px var(--primary);
-  --neon-box-glow: 0 0 5px var(--primary), 0 0 10px var(--primary) inset;
+  --neon-glow: 0 0 10px rgba(255, 204, 0, 0.6), 0 0 20px rgba(255, 204, 0, 0.4);
+  --neon-box-glow: 0 0 10px rgba(255, 204, 0, 0.4);
 }
 
 @utility neon-text {
   font-family: var(--font-outfit);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--primary);
+  color: var(--primary);
   text-shadow: var(--neon-glow);
 }
 
@@ -58,7 +57,7 @@
 }
 
 @utility neon-solid {
-  box-shadow: 0 0 20px var(--primary);
+  box-shadow: 0 0 15px var(--primary);
 }
 
 @theme inline {
