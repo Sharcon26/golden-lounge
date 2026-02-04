@@ -38,7 +38,23 @@
   --sidebar-accent: #1F2A44;
   --sidebar-accent-foreground: #E5E7EB;
   --sidebar-border: #1F2A44;
-  --sidebar-ring: #F59E0B;
+  /* Neon Glow Utilities */
+  --neon-glow: 0 0 5px var(--primary), 0 0 10px var(--primary), 0 0 20px var(--primary);
+  --neon-box-glow: 0 0 5px var(--primary), 0 0 10px var(--primary) inset;
+}
+
+@utility neon-text {
+  font-family: var(--font-outfit);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--primary);
+  text-shadow: var(--neon-glow);
+}
+
+@utility neon-box {
+  border: 1px solid var(--primary);
+  box-shadow: var(--neon-box-glow);
 }
 
 @theme inline {
