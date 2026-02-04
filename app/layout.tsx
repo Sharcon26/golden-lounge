@@ -1,6 +1,6 @@
 import React from "react"
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display, Outfit } from "next/font/google"; // Added Outfit
+import { Inter, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
@@ -9,7 +9,7 @@ const GA4_MEASUREMENT_ID = "G-2CT2Z6R875";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif", display: "swap" });
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit", display: "swap" }); // Added Outfit config
+
 
 export const metadata: Metadata = {
   title: "Premium Lounge & Bar | Downtown Miami Nightlife",
@@ -58,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.className} ${playfair.variable} ${outfit.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${inter.className} ${playfair.variable} font-sans antialiased bg-background text-foreground`}
         suppressHydrationWarning
       >
         <Script

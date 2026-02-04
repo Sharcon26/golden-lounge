@@ -11,21 +11,22 @@
   --card-foreground: #E5E7EB;
   --popover: #0B1026;
   --popover-foreground: #E5E7EB;
-  --primary: #F59E0B;
+  /* Neon Gold */
+  --primary: #FFCC00;
   --primary-foreground: #000000;
   --secondary: #0B1026;
   --secondary-foreground: #E5E7EB;
   --muted: #0B1026;
   --muted-foreground: #94A3B8;
-  --accent: #F59E0B;
+  --accent: #FFCC00;
   --accent-foreground: #070B1A;
   --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
   --border: #1F2A44;
   --input: #1F2A44;
-  --ring: #F59E0B;
+  --ring: #FFCC00;
   --chart-1: #7C3AED;
-  --chart-2: #F59E0B;
+  --chart-2: #FFCC00;
   --chart-3: #10B981;
   --chart-4: #3B82F6;
   --chart-5: #EC4899;
