@@ -39,10 +39,11 @@
   --sidebar-accent-foreground: #E5E7EB;
   --sidebar-border: #1F2A44;
   /* Neon Glow Utilities */
-  --neon-glow-mobile: 0 0 5px rgba(255, 204, 0, 0.4);
+  /* Mobile: Lighter, less saturated gold (255, 225, 120) for a "shimmering" effect */
+  --neon-glow-mobile: 0 0 10px rgba(255, 225, 120, 0.9), 0 0 25px rgba(255, 225, 120, 0.5);
   --neon-glow-desktop: 0 0 5px var(--primary), 0 0 10px var(--primary), 0 0 20px var(--primary);
 
-  --neon-box-glow-mobile: 0 0 5px rgba(255, 204, 0, 0.3);
+  --neon-box-glow-mobile: 0 0 10px rgba(255, 225, 120, 0.7), 0 0 30px rgba(255, 225, 120, 0.3) inset;
   --neon-box-glow: 0 0 5px var(--primary), 0 0 10px var(--primary) inset;
 }
 
