@@ -63,6 +63,8 @@ ${message}
                     email,
                     phone: phone.replace(/\D/g, ""),
                     message: formattedMessage,
+                    date,
+                    guests,
                     honeypot,
                 }),
             });

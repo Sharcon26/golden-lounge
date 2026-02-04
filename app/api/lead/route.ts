@@ -9,6 +9,8 @@ type LeadPayload = {
     phone?: string;
     name?: string;
     message?: string;
+    date?: string;
+    guests?: string | number;
     honeypot?: string;
 };
 
@@ -111,10 +113,14 @@ export async function POST(request: Request) {
                 name: body.name || null,
             },
             message: body.message || null,
+            eventDate: body.date || null,
+            guestCount: body.guests || null,
             meta: {
                 userAgent: request.headers.get("user-agent"),
                 ip,
                 createdAt: new Date().toISOString(),
+                date: body.date || null,
+                guests: body.guests || null,
             },
         };
 
