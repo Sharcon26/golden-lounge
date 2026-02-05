@@ -33,7 +33,7 @@ export function HeroVideoSection() {
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 pt-[72px] text-center">
         <div className="max-w-4xl space-y-10">
           {/* Badges Row */}
-          <div className="flex flex-wrap items-center justify-center gap-3 animate-in fade-in slide-in-from-bottom-3 duration-700">
+          <div className="flex flex-wrap items-center justify-center gap-3">
             {/* Location badge */}
             <a
               href="https://maps.app.goo.gl/odceBHiT9caqxArM7?g_st=ic"
@@ -68,7 +68,7 @@ export function HeroVideoSection() {
           </div>
 
           {/* CTA */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 animate-in fade-in slide-in-from-bottom-5 duration-1000">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6">
             <Button
               asChild
               size="lg"
