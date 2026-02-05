@@ -64,19 +64,17 @@ export function LocationSection() {
                       href="https://maps.google.com/?q=300+S+Biscayne+Blvd+Suite+C-202B+Miami+FL+33131"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors text-sm block"
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm block font-medium"
                     >
-                      <span className="font-medium">GD Lounge</span>
-                      <br />
-                      <a
-                        href="https://maps.app.goo.gl/odceBHiT9caqxArM7?g_st=ic"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-primary transition-colors"
-                      >
-                        300 S Biscayne Blvd Suite C-202B, Miami, FL 33131, United States
-                      </a>
-                      States
+                      GD Lounge
+                    </a>
+                    <a
+                      href="https://maps.app.goo.gl/odceBHiT9caqxArM7?g_st=ic"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm block mt-1"
+                    >
+                      300 S Biscayne Blvd Suite C-202B, Miami, FL 33131, United States
                     </a>
                   </div>
                 </div>
