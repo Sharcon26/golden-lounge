@@ -55,7 +55,7 @@ export default function NewsPage() {
         .from("news")
         .select("*")
         .eq("published", true)
-        .order("updated_at", { ascending: false });
+        .order("created_at", { ascending: false });
 
       if (error) {
         console.error("Error fetching news:", error.message);
@@ -70,11 +70,7 @@ export default function NewsPage() {
           category: article.category || article.tags?.[0] || "News",
           author: article.author || "GD Lounge",
           date: formatNewsDate(
-            new Date(
-              article.updated_at ||
-                article.created_at ||
-                new Date().toISOString()
-            )
+            new Date(article.created_at || new Date().toISOString())
           ),
         }));
         setArticles(formattedArticles);

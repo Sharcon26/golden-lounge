@@ -31,9 +31,7 @@ export async function generateMetadata({
   const title = article.title_en || article.title || "";
   const excerpt = article.excerpt_en || article.excerpt || "";
   const author = article.author || "GD Lounge";
-  const publishedTime = String(
-    article.updated_at || article.created_at || new Date().toISOString()
-  );
+  const publishedTime = String(article.created_at || new Date().toISOString());
 
   return {
     title: `${title} | GD Lounge & Bar Miami`,
@@ -72,9 +70,7 @@ export default async function NewsDetailPage({
   const author = article.author || "GD Lounge";
   const category = article.category || article.tags?.[0] || "News";
   const date = formatNewsDate(
-    new Date(
-      article.updated_at || article.created_at || new Date().toISOString()
-    )
+    new Date(article.created_at || new Date().toISOString())
   );
 
   return (
