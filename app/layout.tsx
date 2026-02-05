@@ -42,6 +42,9 @@ export const metadata: Metadata = {
     apple: "/favicon.svg",
     shortcut: "/favicon.svg",
   },
+  verification: {
+    google: "google6d0a4751e943c7dc",
+  },
 };
 
 export const viewport: Viewport = {
