@@ -34,7 +34,7 @@ async function convert() {
                 .webp({ quality: 80 })
                 .toFile(newFile);
 
-            await fs.unlink(file);
+            // await fs.unlink(file); // Preserving originals as requested
             console.log(`Converted: ${path.relative(PUBLIC_DIR, file)} -> ${path.relative(PUBLIC_DIR, newFile)}`);
         } catch (err) {
             console.error(`Error converting ${file}:`, err);
