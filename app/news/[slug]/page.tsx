@@ -9,6 +9,7 @@ import { Calendar, User, ArrowLeft } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { getAssetUrl } from "@/lib/assets";
 import ReactMarkdown from "react-markdown";
+import { formatNewsDate } from "@/lib/utils";
 
 import { Metadata } from "next";
 
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const title = article.title_en || article.title || "";
     const excerpt = article.excerpt_en || article.excerpt || "";
     const author = article.author || "GD Lounge";
-    const date = article.updated_at || article.created_at || new Date().toISOString();
+    const publishedTime = String(article.updated_at || article.created_at || new Date().toISOString());
 
     return {
         title: `${title} | GD Lounge & Bar Miami`,
@@ -36,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             description: excerpt,
             images: [getAssetUrl(article.image)],
             type: "article",
-            publishedTime: date,
+            publishedTime,
             authors: [author],
         },
     };
@@ -60,17 +61,9 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
     const content = article.content_en || article.content || "";
     const author = article.author || "GD Lounge";
     const category = article.category || article.tags?.[0] || "News";
-    const date = article.updated_at || article.created_at 
-        ? new Date(article.updated_at || article.created_at).toLocaleDateString("en-US", { 
-            year: "numeric", 
-            month: "long", 
-            day: "numeric" 
-        })
-        : new Date().toLocaleDateString("en-US", { 
-            year: "numeric", 
-            month: "long", 
-            day: "numeric" 
-        });
+    const date = formatNewsDate(
+        new Date(article.updated_at || article.created_at || new Date().toISOString())
+    );
 
     return (
         <main className="min-h-screen bg-background">

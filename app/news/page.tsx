@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer";
 import { Calendar, User, ArrowRight, Loader2, ChevronLeft, ChevronRight } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { getAssetUrl } from "@/lib/assets";
+import { formatNewsDate } from "@/lib/utils";
 
 type Article = {
     id: string;
@@ -61,17 +62,9 @@ export default function NewsPage() {
                     image: article.image || "",
                     category: article.category || article.tags?.[0] || "News",
                     author: article.author || "GD Lounge",
-                    date: article.updated_at
-                        ? new Date(article.updated_at).toLocaleDateString("en-US", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric"
-                        })
-                        : new Date().toLocaleDateString("en-US", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric"
-                        }),
+                    date: formatNewsDate(
+                        new Date(article.updated_at || article.created_at || new Date().toISOString())
+                    ),
                 }));
                 setArticles(formattedArticles);
             }
