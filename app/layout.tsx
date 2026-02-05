@@ -5,7 +5,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
-const GA4_MEASUREMENT_ID = "G-2CT2Z6R875";
+const GA4_MEASUREMENT_ID = "G-2J2MWCDXZH";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif", display: "swap" });
