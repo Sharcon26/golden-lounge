@@ -67,7 +67,7 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <Button
               variant="outline"
-              className="rounded-full px-5"
+              className="rounded-full px-5 hover:text-primary hover:border-primary transition-colors"
               onClick={() => setIsPrivatePartyModalOpen(true)}
             >
               Private Party
@@ -111,7 +111,7 @@ export function Header() {
 
             <Button
               variant="outline"
-              className="rounded-full mt-2"
+              className="rounded-full mt-2 hover:text-primary hover:border-primary transition-colors"
               onClick={() => {
                 setIsMenuOpen(false);
                 setIsPrivatePartyModalOpen(true);
