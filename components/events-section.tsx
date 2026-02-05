@@ -82,8 +82,8 @@ export function EventsSection() {
               poster="/Events/11111111111.webp"
               className="absolute inset-0 w-full h-full object-cover"
             >
-              <source src="/Events/IMG_1427.MOV" type="video/mp4" />
-              <source src="/Events/IMG_1427.MOV" type="video/quicktime" />
+              <source src="/Events/IMG_1427.mp4" type="video/mp4" />
+              <source src="/Events/IMG_1427.mp4" type="video/quicktime" />
               Your browser does not support the video tag.
             </video>
 

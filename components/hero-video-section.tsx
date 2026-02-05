@@ -3,9 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ReserveModal } from "@/components/reserve-modal";
-import { PrivatePartyModal } from "@/components/private-party-modal";
+import dynamic from "next/dynamic";
 import { Mic } from "lucide-react";
+
+const ReserveModal = dynamic(() => import("@/components/reserve-modal").then(mod => mod.ReserveModal), { ssr: false });
+const PrivatePartyModal = dynamic(() => import("@/components/private-party-modal").then(mod => mod.PrivatePartyModal), { ssr: false });
 
 export function HeroVideoSection() {
   const [isReserveModalOpen, setIsReserveModalOpen] = useState(false);
