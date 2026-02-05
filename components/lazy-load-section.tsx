@@ -5,9 +5,10 @@ import { useState, useEffect, useRef } from "react";
 interface LazyLoadSectionProps {
     children: React.ReactNode;
     className?: string;
+    id?: string;
 }
 
-export default function LazyLoadSection({ children, className }: LazyLoadSectionProps) {
+export default function LazyLoadSection({ children, className, id }: LazyLoadSectionProps) {
     const [isVisible, setIsVisible] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
@@ -50,7 +51,7 @@ export default function LazyLoadSection({ children, className }: LazyLoadSection
     }, []);
 
     return (
-        <div ref={ref} className={className}>
+        <div ref={ref} className={className} id={id}>
             {isVisible ? children : null}
         </div>
     );

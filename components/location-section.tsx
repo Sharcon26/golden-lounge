@@ -4,7 +4,6 @@ import { LeadForm } from "@/components/lead-form";
 export function LocationSection() {
   return (
     <section
-      id="contact"
       className="py-16 lg:py-20 bg-background border-t border-border/50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

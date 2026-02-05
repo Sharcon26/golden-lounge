@@ -27,7 +27,7 @@ export function VipSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section id="vip" className="py-24 lg:py-32 bg-background/50 border-b border-white/5">
+    <section className="py-24 lg:py-32 bg-background/50 border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 

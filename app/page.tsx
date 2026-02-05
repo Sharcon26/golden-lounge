@@ -27,7 +27,7 @@ export default function Home() {
       <HeroVideoSection />
 
       {/* 4 Main Content Blocks requested by client - Wrapped in Aggressive Lazy Loader */}
-      <LazyLoadSection className="min-h-[500px] lg:min-h-[800px]">
+      <LazyLoadSection className="min-h-[500px] lg:min-h-[800px]" id="about">
         <LoungeSection />
       </LazyLoadSection>
 
@@ -35,7 +35,7 @@ export default function Home() {
         <EventsSection />
       </LazyLoadSection>
 
-      <LazyLoadSection className="min-h-[500px] lg:min-h-[800px]">
+      <LazyLoadSection className="min-h-[500px] lg:min-h-[800px]" id="vip">
         <VipSection />
       </LazyLoadSection>
 
@@ -52,11 +52,11 @@ export default function Home() {
       {/* <GallerySection /> */}
 
       {/* Keeping these for additional context/SEO, can be removed if client counts them as clutter, but usually good to keep */}
-      <LazyLoadSection className="min-h-[400px]">
+      <LazyLoadSection className="min-h-[400px]" id="cocktails">
         <CocktailsSection />
       </LazyLoadSection>
 
-      <LazyLoadSection className="min-h-[400px]">
+      <LazyLoadSection className="min-h-[400px]" id="food">
         <FoodSection />
       </LazyLoadSection>
 
@@ -64,7 +64,7 @@ export default function Home() {
         <FaqSection />
       </LazyLoadSection>
 
-      <LazyLoadSection className="min-h-[300px]">
+      <LazyLoadSection className="min-h-[300px]" id="contact">
         <LocationSection />
       </LazyLoadSection>
 
