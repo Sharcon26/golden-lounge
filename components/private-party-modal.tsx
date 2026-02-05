@@ -136,7 +136,14 @@ ${message}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="space-y-2 text-left">
                                     <Label htmlFor="pp-date" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Date <span className="text-primary">*</span></Label>
-                                    <Input id="pp-date" type="date" required value={date} onChange={(e) => setDate(e.target.value)} className="bg-card border-border/50 dark:[color-scheme:dark]" />
+                                    <Input
+                                        id="pp-date"
+                                        type="date"
+                                        required
+                                        value={date}
+                                        onChange={(e) => setDate(e.target.value)}
+                                        className="bg-card border-border/50 dark:[color-scheme:dark] [&::-webkit-calendar-picker-indicator]:filter-[invert(1)_invert(67%)_sepia(30%)_saturate(716%)_hue-rotate(357deg)_brightness(92%)_contrast(85%)] hover:[&::-webkit-calendar-picker-indicator]:cursor-pointer"
+                                    />
                                 </div>
                                 <div className="space-y-2 text-left">
                                     <Label htmlFor="pp-guests" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Guests <span className="text-primary">*</span></Label>
