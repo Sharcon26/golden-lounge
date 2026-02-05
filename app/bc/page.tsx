@@ -175,10 +175,18 @@ export default function BusinessCardPage() {
                 </div>
             </div>
 
-            <div className="w-full z-10 mt-auto pb-6">
+            <div className="w-full z-10 mt-auto pb-6 flex flex-col items-center gap-1">
                 <p className="text-center text-[10px] text-white/30 uppercase tracking-widest">
                     GD Lounge © {new Date().getFullYear()}
                 </p>
+                <a
+                    href="https://sharconai.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10px] text-white/20 hover:text-white/40 uppercase tracking-widest transition-colors"
+                >
+                    Powered by Sharcon
+                </a>
             </div>
         </main>
     );
