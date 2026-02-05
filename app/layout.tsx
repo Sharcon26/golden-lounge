@@ -23,19 +23,22 @@ export const metadata: Metadata = {
     "cocktails Miami",
     "downtown Miami bar",
   ],
+  metadataBase: new URL("https://www.gdmiami.com"),
   openGraph: {
-    title: "Premium Lounge & Bar | Downtown Miami Nightlife",
-    description:
-      "Experience the best nightlife in Downtown Miami with smooth drinks, curated sound, and an exclusive atmosphere.",
+    title: "GD Lounge & Bar | Downtown Miami Nightlife",
+    description: "Experience the best nightlife in Downtown Miami with smooth drinks, curated sound, and an exclusive atmosphere.",
+    url: "https://www.gdmiami.com",
+    siteName: "GD Lounge",
+    locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "GD Lounge & Bar",
+    description: "Experience the best nightlife in Downtown Miami.",
+  },
   icons: {
-    icon: [
-      {
-        url: "/favicon.svg",
-        type: "image/svg+xml",
-      },
-    ],
+    icon: "/favicon.svg",
     apple: "/favicon.svg",
     shortcut: "/favicon.svg",
   },
