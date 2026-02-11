@@ -148,7 +148,6 @@ export function MediaCarousel({
                                     className="object-cover"
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                     priority={index === 0 && priority} // Only if prop priority is true
-                                    unoptimized={true} // Keep unoptimized for now as requested before
                                 />
                             )}
 
