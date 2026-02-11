@@ -24,10 +24,13 @@ export const metadata: Metadata = {
     "downtown Miami bar",
   ],
   metadataBase: new URL("https://www.gdmiami.com"),
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     title: "GD Lounge & Bar | Downtown Miami Nightlife",
     description: "Experience the best nightlife in Downtown Miami with smooth drinks, curated sound, and an exclusive atmosphere.",
-    url: "https://www.gdmiami.com",
+    url: "./",
     siteName: "GD Lounge",
     locale: "en_US",
     type: "website",
