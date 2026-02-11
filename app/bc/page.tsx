@@ -64,16 +64,7 @@ export default function BusinessCardPage() {
 
             <div className="z-10 w-full max-w-md px-6 py-12 flex-grow flex flex-col items-center">
                 {/* Header Actions */}
-                <div className="w-full flex justify-end mb-4">
-                    <Button
-                        variant="secondary"
-                        size="icon"
-                        className="rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white"
-                        onClick={handleShare}
-                    >
-                        <Share2 className="w-5 h-5" />
-                    </Button>
-                </div>
+
 
                 {/* Profile Section */}
                 <div className="flex flex-col items-center text-center mb-10">
@@ -123,6 +114,9 @@ export default function BusinessCardPage() {
                             <a href="tel:+13052491222" className="p-3 rounded-full bg-white/5 hover:bg-white/10 hover:text-primary transition-colors">
                                 <Phone className="w-5 h-5" />
                             </a>
+                            <button onClick={handleShare} className="p-3 rounded-full bg-white/5 hover:bg-white/10 hover:text-primary transition-colors">
+                                <Share2 className="w-5 h-5" />
+                            </button>
                         </div>
                         {/* Contact Text */}
                         <div className="flex flex-col items-center gap-1 text-sm text-white/60">
