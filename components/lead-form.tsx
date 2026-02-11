@@ -234,7 +234,7 @@ export function LeadForm({
                                 htmlFor="agreeNonMarketing"
                                 className="text-xs leading-relaxed text-muted-foreground cursor-pointer select-none"
                             >
-                                By checking this box, I consent to receive non-marketing text messages from GD Lounge (Gold Door 300 LLC) about ticket purchases, event reminders, reservations, schedule updates, and important venue notifications. Message frequency varies, message & data rates may apply. Text HELP for assistance, reply STOP to opt out.
+                                By checking this box, I consent to receive non-marketing text messages from GD Lounge about ticket purchases, event reminders, reservations, schedule updates, and important venue notifications. Message frequency varies, message & data rates may apply. Text HELP for assistance, reply STOP to opt out. SMS consent is not a condition of purchase.
                             </label>
                         </div>
 
@@ -249,7 +249,7 @@ export function LeadForm({
                                 htmlFor="agreeMarketing"
                                 className="text-xs leading-relaxed text-muted-foreground cursor-pointer select-none"
                             >
-                                By checking this box, I consent to receive marketing and promotional messages including special offers, discounts, new product updates among others from GD Lounge (Gold Door 300 LLC) at the phone number provided. Frequency may vary. Message & data rates may apply. Text HELP for assistance, reply STOP to opt out.
+                                By checking this box, I consent to receive marketing and promotional messages including special offers, discounts, new product updates among others from GD Lounge at the phone number provided. Frequency may vary. Message & data rates may apply. Text HELP for assistance, reply STOP to opt out. SMS consent is not a condition of purchase.
                             </label>
                         </div>
                     </div>
@@ -272,6 +272,10 @@ export function LeadForm({
                     >
                         {isLoading ? "Sending..." : buttonText}
                     </Button>
+
+                    <p className="text-[10px] text-muted-foreground text-center pt-2">
+                        By submitting this form, you confirm you are 21 years of age or older.
+                    </p>
 
                     <div className="flex items-center justify-center gap-2 mt-4 text-xs text-muted-foreground">
                         <Link href="/privacy" className="hover:text-primary transition-colors">

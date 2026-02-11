@@ -161,13 +161,13 @@ ${message}
                                 <div className="flex items-start gap-2.5 text-left">
                                     <Checkbox id="pp-agreeNonMarketing" checked={agreeNonMarketing} onCheckedChange={(c) => setAgreeNonMarketing(!!c)} className="mt-0.5 border-primary/40 data-[state=checked]:bg-primary" />
                                     <label htmlFor="pp-agreeNonMarketing" className="text-xs text-muted-foreground cursor-pointer">
-                                        By checking this box, I consent to receive non-marketing text messages from GD Lounge (Gold Door 300 LLC) about ticket purchases, event reminders, reservations, schedule updates, and important venue notifications. Message frequency varies, message & data rates may apply. Text HELP for assistance, reply STOP to opt out.
+                                        By checking this box, I consent to receive non-marketing text messages from GD Lounge about ticket purchases, event reminders, reservations, schedule updates, and important venue notifications. Message frequency varies, message & data rates may apply. Text HELP for assistance, reply STOP to opt out. SMS consent is not a condition of purchase.
                                     </label>
                                 </div>
                                 <div className="flex items-start gap-2.5 text-left">
                                     <Checkbox id="pp-agreeMarketing" checked={agreeMarketing} onCheckedChange={(c) => setAgreeMarketing(!!c)} className="mt-0.5 border-primary/40 data-[state=checked]:bg-primary" />
                                     <label htmlFor="pp-agreeMarketing" className="text-xs text-muted-foreground cursor-pointer">
-                                        By checking this box, I consent to receive marketing and promotional messages including special offers, discounts, new product updates among others from GD Lounge (Gold Door 300 LLC) at the phone number provided. Frequency may vary. Message & data rates may apply. Text HELP for assistance, reply STOP to opt out.
+                                        By checking this box, I consent to receive marketing and promotional messages including special offers, discounts, new product updates among others from GD Lounge at the phone number provided. Frequency may vary. Message & data rates may apply. Text HELP for assistance, reply STOP to opt out. SMS consent is not a condition of purchase.
                                     </label>
                                 </div>
                             </div>
@@ -181,6 +181,10 @@ ${message}
                             <Button type="submit" disabled={isLoading} className="w-full font-bold bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-300">
                                 {isLoading ? "Sending..." : "Request Booking"}
                             </Button>
+
+                            <p className="text-[10px] text-muted-foreground text-center pt-2">
+                                By submitting this form, you confirm you are 21 years of age or older.
+                            </p>
 
                             <div className="flex items-center justify-center gap-2 mt-4 text-xs text-muted-foreground">
                                 <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
