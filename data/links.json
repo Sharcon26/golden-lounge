@@ -1,12 +1,5 @@
 [
     {
-        "id": "5",
-        "title": "Flame Elite 13 Feb",
-        "url": "https://www.flameelite.com/event-details/pre-valentines-day",
-        "order": 0,
-        "active": true
-    },
-    {
         "id": "1",
         "title": "Book Private Party",
         "url": "/private-party",
