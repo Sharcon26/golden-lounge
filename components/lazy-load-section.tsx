@@ -35,12 +35,12 @@ export default function LazyLoadSection({ children, className, id }: LazyLoadSec
         if (idleCallback) {
             idleId = idleCallback(() => {
                 setIsVisible(true);
-            }, { timeout: 4000 }); // Force load after 4s idle max
+            }, { timeout: 8000 }); // Force load after 8s idle max
         } else {
             // Fallback for Safari/older browsers
             idleId = window.setTimeout(() => {
                 setIsVisible(true);
-            }, 4000);
+            }, 8000);
         }
 
         return () => {

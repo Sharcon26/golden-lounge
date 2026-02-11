@@ -27,9 +27,9 @@ export default function Home() {
       <HeroVideoSection />
 
       {/* 4 Main Content Blocks requested by client - Wrapped in Aggressive Lazy Loader */}
-      <LazyLoadSection className="min-h-[500px] lg:min-h-[800px]" id="about">
+      <div id="about">
         <LoungeSection />
-      </LazyLoadSection>
+      </div>
 
       <LazyLoadSection className="min-h-[500px] lg:min-h-[600px]">
         <EventsSection />

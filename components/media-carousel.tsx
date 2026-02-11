@@ -23,6 +23,8 @@ interface MediaCarouselProps {
     media: MediaItem[];
     aspectRatio?: string; // e.g., "aspect-[4/5]" or "aspect-square"
     className?: string;
+    priority?: boolean;
+    loop?: boolean;
 }
 
 // Helper to resolve URL based on isLocal flag
@@ -34,9 +36,9 @@ export function MediaCarousel({
     media,
     aspectRatio = "aspect-[4/5]",
     className = "",
-    priority = false, // New prop, defaults to false for lazy loading
+    priority = false, // New prop, defaults to true for LCP/FCP if passed
     loop = false // Default to false for strict order
-}: MediaCarouselProps & { priority?: boolean; loop?: boolean }) {
+}: MediaCarouselProps) {
     const swiperRef = useRef<SwiperType | null>(null);
     const [isMuted, setIsMuted] = useState(true);
 
@@ -117,7 +119,7 @@ export function MediaCarousel({
                                         muted={isMuted}
                                         playsInline
                                         webkit-playsinline="true"
-                                        preload="metadata" // Changed from auto to metadata for better page speed
+                                        preload={index === 0 && priority ? "auto" : "metadata"}
                                     >
                                         <source src={resolveUrl(item.src, item.isLocal)} />
                                         Your browser does not support the video tag.
@@ -146,8 +148,9 @@ export function MediaCarousel({
                                     alt={item.alt || ""}
                                     fill
                                     className="object-cover"
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                    priority={index === 0 && priority} // Only if prop priority is true
+                                    loading={index === 0 && priority ? "eager" : "lazy"}
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                                    priority={index === 0 && priority}
                                 />
                             )}
 
@@ -157,6 +160,19 @@ export function MediaCarousel({
                     </SwiperSlide>
                 ))}
             </Swiper>
+
+            {/* Hidden preloader for first item poster/image if priority is on */}
+            {priority && media[0] && (
+                <div className="hidden">
+                    <Image
+                        src={resolveUrl(media[0].poster || media[0].src, media[0].isLocal)}
+                        alt="preload"
+                        width={1}
+                        height={1}
+                        priority
+                    />
+                </div>
+            )}
 
             {/* Navigation Arrows - Converted to Buttons for Accessibility */}
             {media.length > 1 && (
