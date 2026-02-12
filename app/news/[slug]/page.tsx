@@ -66,7 +66,11 @@ export default async function NewsDetailPage({
 
   // Преобразуем данные из формата БД
   const title = article.title_en || article.title || "";
-  const content = article.content_en || article.content || "";
+  // Убираем Kramdown/Jekyll атрибуты {:...}, иначе они видны в тексте
+  const content = (article.content_en || article.content || "").replace(
+    /\{:[\s\S]*?\}/g,
+    ""
+  );
   const author = article.author || "GD Lounge";
   const category = article.category || article.tags?.[0] || "News";
   const date = formatNewsDate(
