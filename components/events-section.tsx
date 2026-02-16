@@ -41,7 +41,7 @@ export function EventsSection() {
               <ul className="space-y-3 text-white/90">
                 <li className="flex items-start gap-3">
                   <span className="text-primary">•</span>
-                  <span><strong>Dates:</strong> February 6, 13 & 20</span>
+                  <span><strong>Dates:</strong> February 20 & March 6</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary">•</span>
