@@ -76,7 +76,7 @@ export function Header() {
               asChild
               className="rounded-full px-6"
             >
-              <a href={RESERVE_URL} target="_blank" rel="noopener noreferrer">
+              <a href={RESERVE_URL} target="_blank" rel="noopener noreferrer" id="reservation-button-header-desktop">
                 Reserve
               </a>
             </Button>
@@ -125,6 +125,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}
+                id="reservation-button-header-mobile"
               >
                 Reserve
               </a>

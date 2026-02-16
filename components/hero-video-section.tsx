@@ -76,7 +76,7 @@ export function HeroVideoSection() {
               size="lg"
               className="w-full sm:w-auto rounded-xl px-10 py-7 text-lg font-bold hover:scale-105 transition-all"
             >
-              <a href="https://www.sevenrooms.com/reservations/gdlounge" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.sevenrooms.com/reservations/gdlounge" target="_blank" rel="noopener noreferrer" id="reservation-button-hero">
                 Reserve a Table
               </a>
             </Button>
