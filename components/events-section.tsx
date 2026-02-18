@@ -79,7 +79,7 @@ export function EventsSection() {
               muted
               playsInline
               controls={false}
-              poster="/Events/11111111111.webp"
+              poster="/Events/events.webp"
               className="absolute inset-0 w-full h-full object-cover"
             >
               <source src="/Events/IMG_1427.mp4" type="video/mp4" />

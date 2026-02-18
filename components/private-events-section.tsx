@@ -6,11 +6,13 @@ import { MediaCarousel, MediaItem } from "@/components/media-carousel";
 import { PrivatePartyModal } from "@/components/private-party-modal";
 
 const EVENTS_MEDIA: MediaItem[] = [
+    { type: "video", src: "/Private/private-party.mp4", alt: "Private Party Experience", isLocal: true },
     { type: "image", src: "/Private/1.webp", alt: "Private Event 1", isLocal: true },
     { type: "image", src: "/Private/2.webp", alt: "Private Event 2", isLocal: true },
     { type: "image", src: "/Private/3.webp", alt: "Private Event 3", isLocal: true },
     { type: "image", src: "/Private/4.webp", alt: "Private Event 4", isLocal: true },
     { type: "image", src: "/Private/5.webp", alt: "Private Event 5", isLocal: true },
+    { type: "image", src: "/Events/6.webp", alt: "Private Event 6", isLocal: true },
 ];
 
 const FEATURES = [
@@ -69,6 +71,7 @@ export function PrivateEventsSection() {
                             aspectRatio="h-full lg:aspect-[4/5]"
                             className="shadow-[0_0_50px_rgba(245,158,11,0.15)] h-full"
                             loop={false}
+                            priority={true}
                         />
                     </div>
                 </div>

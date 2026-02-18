@@ -12,6 +12,7 @@ const KARAOKE_MEDIA: MediaItem[] = [
     { type: "image", src: "/karaokexp/4.webp", alt: "Karaoke 4", isLocal: true },
     { type: "image", src: "/karaokexp/5.webp", alt: "Karaoke 5", isLocal: true },
     { type: "image", src: "/karaokexp/6.webp", alt: "Karaoke 6", isLocal: true },
+    { type: "image", src: "/karaokexp/7.webp", alt: "Karaoke 7", isLocal: true },
 ];
 
 const FEATURES = [
