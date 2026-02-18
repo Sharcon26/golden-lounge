@@ -120,6 +120,7 @@ export function Footer() {
         <div className="mt-8 sm:mt-10 pt-4 sm:pt-6 border-t border-border/40 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.1em] text-muted-foreground/60">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 md:gap-8 text-center md:text-left w-full md:w-auto">
             <p>© 2026 Premium Lounge & Bar. All rights reserved.</p>
+            <p className="text-[10px] text-muted-foreground/40">GD Lounge is operated by Gold Door 300 LLC.</p>
             <Link href="/privacy" className="hover:text-primary transition-colors">
               Privacy Policy
             </Link>

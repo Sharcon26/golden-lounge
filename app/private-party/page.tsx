@@ -149,13 +149,13 @@ ${message}
                                     <div className="flex items-start gap-3 text-left">
                                         <Checkbox id="pp-agreeNonMarketing" checked={agreeNonMarketing} onCheckedChange={(c) => setAgreeNonMarketing(!!c)} className="mt-0.5 border-primary/40 data-[state=checked]:bg-primary" />
                                         <label htmlFor="pp-agreeNonMarketing" className="text-xs text-muted-foreground cursor-pointer leading-relaxed">
-                                            By checking this box, I consent to receive non-marketing text messages from Gold Door 300 LLC about ticket purchases, event reminders, reservations, schedule updates, and important venue notifications. Message frequency varies, message & data rates may apply. Text HELP for assistance, reply STOP to opt out.
+                                            By checking this box, I consent to receive non-marketing text messages from GD Lounge related to reservations, ticket purchase receipts, event reminders, schedule updates, and other service-related notifications. Message frequency varies. Msg & data rates may apply. Text HELP for assistance, reply STOP to opt out. SMS consent is not a condition of purchase.
                                         </label>
                                     </div>
                                     <div className="flex items-start gap-3 text-left">
                                         <Checkbox id="pp-agreeMarketing" checked={agreeMarketing} onCheckedChange={(c) => setAgreeMarketing(!!c)} className="mt-0.5 border-primary/40 data-[state=checked]:bg-primary" />
                                         <label htmlFor="pp-agreeMarketing" className="text-xs text-muted-foreground cursor-pointer leading-relaxed">
-                                            By checking this box, I consent to receive marketing and promotional messages including special offers, discounts, new product updates among others from Gold Door 300 LLC at the phone number provided. Frequency may vary. Message & data rates may apply. Text HELP for assistance, reply STOP to opt out.
+                                            By checking this box, I consent to receive marketing and promotional text messages from GD Lounge, including event announcements, special offers, discounts, and venue updates. Message frequency varies. Msg & data rates may apply. Text HELP for assistance, reply STOP to opt out. SMS consent is not a condition of purchase.
                                         </label>
                                     </div>
                                 </div>
