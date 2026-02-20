@@ -16,6 +16,7 @@ interface LeadFormProps {
     buttonText?: string;
     className?: string;
     onSuccess?: () => void;
+    requireAgeGateCheckbox?: boolean;
 }
 
 export function LeadForm({
@@ -25,6 +26,7 @@ export function LeadForm({
     buttonText = "Join VIP List",
     className = "",
     onSuccess,
+    requireAgeGateCheckbox = false,
 }: LeadFormProps) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -34,6 +36,7 @@ export function LeadForm({
 
     const [agreeNonMarketing, setAgreeNonMarketing] = useState(false);
     const [agreeMarketing, setAgreeMarketing] = useState(false);
+    const [isAgeConfirmed, setIsAgeConfirmed] = useState(false);
 
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -87,7 +90,10 @@ export function LeadForm({
             return;
         }
 
-
+        if (requireAgeGateCheckbox && !isAgeConfirmed) {
+            setError("Please confirm you are 21 years of age or older.");
+            return;
+        }
 
         // Removing the agreeNonMarketing validation block completely
 
@@ -265,6 +271,24 @@ export function LeadForm({
                         By submitting this form, you agree to receive SMS messages only if you checked a consent box above. Message frequency may vary. Message & data rates may apply. Reply STOP to opt out or HELP for help.
                     </p>
 
+                    {requireAgeGateCheckbox && (
+                        <div className="flex items-start gap-2.5 text-left pt-2 pb-1">
+                            <Checkbox
+                                id="ageConfirm"
+                                checked={isAgeConfirmed}
+                                onCheckedChange={(checked) => setIsAgeConfirmed(checked as boolean)}
+                                className="mt-0.5 border-primary/40 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                required
+                            />
+                            <label
+                                htmlFor="ageConfirm"
+                                className="text-sm leading-relaxed text-foreground cursor-pointer select-none font-medium"
+                            >
+                                I confirm that I am 21 years of age or older. <span className="text-primary">*</span>
+                            </label>
+                        </div>
+                    )}
+
                     <Button
                         type="submit"
                         disabled={isLoading}
@@ -273,9 +297,11 @@ export function LeadForm({
                         {isLoading ? "Sending..." : buttonText}
                     </Button>
 
-                    <p className="text-[10px] text-muted-foreground text-center pt-2">
-                        By submitting this form, you confirm you are 21 years of age or older.
-                    </p>
+                    {!requireAgeGateCheckbox && (
+                        <p className="text-[10px] text-muted-foreground text-center pt-2">
+                            By submitting this form, you confirm you are 21 years of age or older.
+                        </p>
+                    )}
 
                     <div className="flex items-center justify-center gap-2 mt-4 text-xs text-muted-foreground">
                         <Link href="/privacy" className="hover:text-primary transition-colors">

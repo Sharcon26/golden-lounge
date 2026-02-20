@@ -47,6 +47,7 @@ export default function SmsOptInPage() {
                             title="Stay Connected"
                             description="Fill out the form below to subscribe to our updates."
                             buttonText="Subscribe"
+                            requireAgeGateCheckbox={true}
                         />
                     </div>
 
