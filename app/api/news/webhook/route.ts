@@ -117,7 +117,8 @@ export async function POST(request: Request) {
         }
 
         // 3. Data Preparation
-        const slug = generateSlug(title);
+        const baseSlug = generateSlug(title);
+        let slug = baseSlug;
 
         // Handle tags: ensuring it's an array for text[]
         const processedTags = Array.isArray(tags) ? tags : [];
@@ -125,9 +126,7 @@ export async function POST(request: Request) {
         // 4. Insert into Supabase
         const supabase = createClient(supabaseUrl, supabaseServiceKey);
         
-        // Prepare data with english and optional russian fields
-        const insertData = {
-            slug,
+        const baseInsertData = {
             title_en: title,
             content_en: content,
             excerpt_en: excerpt || "",
@@ -139,16 +138,39 @@ export async function POST(request: Request) {
             published: typeof published === "boolean" ? published : true,
             updated_at: new Date().toISOString(),
         };
-        
-        const { data, error } = await supabase
-            .from("news")
-            .insert([insertData])
-            .select();
+
+        let data: any = null;
+        let error: any = null;
+        const maxSlugAttempts = 5;
+
+        for (let attempt = 0; attempt < maxSlugAttempts; attempt++) {
+            const insertData = { ...baseInsertData, slug };
+            const result = await supabase
+                .from("news")
+                .insert([insertData])
+                .select();
+
+            data = result.data;
+            error = result.error;
+
+            if (!error) break;
+
+            // On duplicate slug, try next unique slug and retry
+            if (error.code === "23505" && attempt < maxSlugAttempts - 1) {
+                const suffix = attempt === 0
+                    ? Date.now().toString(36)
+                    : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+                slug = `${baseSlug}-${suffix}`;
+                console.log("⚠️ Duplicate slug, retrying with:", slug);
+                continue;
+            }
+
+            break;
+        }
 
         if (error) {
             console.error("❌ Supabase Insertion Error:", error);
 
-            // Check for unique constraint violation (slug)
             if (error.code === "23505") {
                 return NextResponse.json(
                     { success: false, error: `A post with the title '${title}' already exists (duplicate slug).` },
