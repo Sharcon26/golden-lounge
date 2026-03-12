@@ -17,7 +17,8 @@ export function EventsSection() {
               </span>
               <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground font-serif tracking-tight leading-tight">
                 Secret Room <br />
-                <span className="text-primary">Club Night</span>
+                <span className="text-primary">Club Night</span> <br />
+                <span className="text-2xl sm:text-3xl font-light tracking-widest text-white/60 uppercase">March 13</span>
               </h2>
             </div>
 

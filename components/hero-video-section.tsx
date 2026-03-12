@@ -60,10 +60,8 @@ export function HeroVideoSection() {
 
           {/* Secret Room Event CTA */}
           <div className="flex justify-center">
-            <button
-              onClick={() => {
-                document.getElementById("events")?.scrollIntoView({ behavior: "smooth" });
-              }}
+            <a
+              href="#events"
               className="group relative inline-flex items-center gap-3 rounded-full border border-primary/60 bg-primary/10 px-6 py-2.5 backdrop-blur-md transition-all duration-300 hover:bg-primary/20 hover:border-primary hover:shadow-[0_0_32px_rgba(245,158,11,0.45)] hover:scale-105"
             >
               {/* pulsing dot */}
@@ -86,7 +84,7 @@ export function HeroVideoSection() {
               >
                 <path d="M12 5v14M5 12l7 7 7-7" />
               </svg>
-            </button>
+            </a>
           </div>
 
           {/* Headline */}
