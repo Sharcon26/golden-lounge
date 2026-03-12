@@ -10,6 +10,7 @@ import { ReserveModal } from "@/components/reserve-modal";
 import { PrivatePartyModal } from "@/components/private-party-modal";
 
 const RESERVE_URL = "https://www.sevenrooms.com/reservations/gdlounge";
+const EVENTBRITE_URL = "https://www.eventbrite.com/e/gd-lounge-presents-secret-room-club-night-tickets-1984784124746";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -61,6 +62,18 @@ export function Header() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover/nav:w-full" />
               </Link>
             ))}
+            <a
+              href={EVENTBRITE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors duration-200"
+            >
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
+              </span>
+              Secret Room
+            </a>
           </nav>
 
           {/* CTA Buttons */}
@@ -108,6 +121,19 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={EVENTBRITE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMenuOpen(false)}
+              className="inline-flex items-center gap-2 text-lg font-semibold text-primary py-2"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+              </span>
+              Secret Room · Mar 13
+            </a>
 
             <Button
               variant="outline"

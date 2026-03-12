@@ -61,7 +61,9 @@ export function HeroVideoSection() {
           {/* Secret Room Event CTA */}
           <div className="flex justify-center">
             <a
-              href="#events"
+              href="https://www.eventbrite.com/e/gd-lounge-presents-secret-room-club-night-tickets-1984784124746"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-3 rounded-full border border-primary/60 bg-primary/10 px-6 py-2.5 backdrop-blur-md transition-all duration-300 hover:bg-primary/20 hover:border-primary hover:shadow-[0_0_32px_rgba(245,158,11,0.45)] hover:scale-105"
             >
               {/* pulsing dot */}
