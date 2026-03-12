@@ -19,28 +19,29 @@ export default function SecretPage() {
         <main className="min-h-screen bg-[#080810] text-white overflow-x-hidden">
 
             {/* ── Top nav ── */}
-            <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 py-3.5 bg-black/50 backdrop-blur-xl border-b border-white/5">
+            <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-5 h-14 bg-black/90 backdrop-blur-xl border-b border-white/10">
                 <Link
                     href="/"
-                    className="flex items-center gap-2 text-sm font-medium text-white/50 hover:text-white transition-colors"
+                    className="flex items-center gap-2 text-sm font-medium text-white/60 hover:text-white transition-colors"
                 >
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M19 12H5M12 5l-7 7 7 7" />
                     </svg>
-                    GD Lounge
+                    <span className="hidden sm:inline">GD Lounge</span>
+                    <span className="sm:hidden">Home</span>
                 </Link>
                 <a
                     href={STRIPE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-bold tracking-[0.2em] uppercase bg-primary text-black rounded-full px-5 py-2 hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(245,158,11,0.5)] transition-all"
+                    className="text-[11px] sm:text-xs font-bold tracking-[0.18em] uppercase bg-primary text-black rounded-full px-4 sm:px-5 py-2 hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(245,158,11,0.5)] transition-all whitespace-nowrap"
                 >
                     Get Tickets
                 </a>
             </nav>
 
             {/* ── HERO ── */}
-            <section className="relative min-h-screen flex items-center pt-16">
+            <section className="relative min-h-screen flex items-center pt-14">
 
                 {/* Background glow */}
                 <div className="absolute inset-0 pointer-events-none overflow-hidden">
