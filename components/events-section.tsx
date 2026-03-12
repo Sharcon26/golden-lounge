@@ -27,7 +27,7 @@ export function EventsSection() {
                 GD Lounge invites you to an exclusive Secret Room Club Night experience on Friday the 13th.
               </p>
               <p>
-                Enjoy a premium nightlife atmosphere featuring DJ Fresco, explosive choreography, and an immersive and hypnotic show hosted by Matilda that will ignite your imagination with whimsical performances and theatrical magic.
+                Enjoy a premium nightlife atmosphere featuring DJ Fresco, explosive choreography, and an immersive and hypnotic show created and hosted by Mad Matilda that will ignite your imagination with whimsical performances and theatrical magic.
               </p>
               <p>
                 An unforgettable night where you'll be surrounded by sophisticated allure and unforgettable experiences in one of Miami's unique nightlife venues where you can enjoy an upscale Lounge Bar, Secret Room, and VIP karaoke room.

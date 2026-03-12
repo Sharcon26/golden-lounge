@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
     title: "Secret Room Club Night — GD Lounge",
     description:
-        "An exclusive Secret Room Club Night on Friday March 13 at GD Lounge, Downtown Miami. Featuring DJ Fresco, explosive choreography, and a hypnotic show hosted by Matilda.",
+        "An exclusive Secret Room Club Night on Friday March 13 at GD Lounge, Downtown Miami. Featuring DJ Fresco, explosive choreography, and a hypnotic show created and hosted by Mad Matilda.",
     openGraph: {
         title: "Secret Room Club Night — GD Lounge",
         description:
@@ -82,7 +82,7 @@ export default function SecretPage() {
                             {/* Description */}
                             <div className="space-y-4 text-white/60 text-base leading-relaxed max-w-lg">
                                 <p>
-                                    An exclusive club night at GD Lounge featuring <span className="text-white/90">DJ Fresco</span>, explosive choreography, and an immersive show hosted by <span className="text-white/90">Matilda</span> — whimsical performances and theatrical magic in one of Miami's most unique nightlife venues.
+                                    An exclusive club night at GD Lounge featuring <span className="text-white/90">DJ Fresco</span>, explosive choreography, and an immersive show created and hosted by <span className="text-white/90">Mad Matilda</span> — whimsical performances and theatrical magic in one of Miami's most unique nightlife venues.
                                 </p>
                                 <p className="text-sm">
                                     Upscale Lounge Bar · Secret Room · VIP Karaoke · 21+ Event
