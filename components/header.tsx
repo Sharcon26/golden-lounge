@@ -10,7 +10,7 @@ import { ReserveModal } from "@/components/reserve-modal";
 import { PrivatePartyModal } from "@/components/private-party-modal";
 
 const RESERVE_URL = "https://www.sevenrooms.com/reservations/gdlounge";
-const EVENTBRITE_URL = "https://www.eventbrite.com/e/gd-lounge-presents-secret-room-club-night-tickets-1984784124746";
+const EVENTBRITE_URL = "https://buy.stripe.com/cNi6oI3Dh96B5eldYQ0Jq00";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -62,10 +62,8 @@ export function Header() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover/nav:w-full" />
               </Link>
             ))}
-            <a
-              href={EVENTBRITE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/secret"
               className="relative inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors duration-200"
             >
               <span className="relative flex h-1.5 w-1.5">
@@ -73,7 +71,7 @@ export function Header() {
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
               </span>
               Secret Room
-            </a>
+            </Link>
           </nav>
 
           {/* CTA Buttons */}
@@ -121,10 +119,8 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href={EVENTBRITE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/secret"
               onClick={() => setIsMenuOpen(false)}
               className="inline-flex items-center gap-2 text-lg font-semibold text-primary py-2"
             >
@@ -133,7 +129,7 @@ export function Header() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
               </span>
               Secret Room · Mar 13
-            </a>
+            </Link>
 
             <Button
               variant="outline"

@@ -75,7 +75,7 @@ export function EventsSection() {
                 21+ event. Dress to impress and get ready for an unforgettable night.
               </p>
               <Button
-                onClick={() => window.open("https://www.eventbrite.com/e/gd-lounge-presents-secret-room-club-night-tickets-1984784124746", "_blank")}
+                onClick={() => window.open("https://buy.stripe.com/cNi6oI3Dh96B5eldYQ0Jq00", "_blank")}
                 className="w-full sm:w-auto px-8 py-6 text-lg rounded-full"
               >
                 Get Tickets
