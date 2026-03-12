@@ -135,7 +135,7 @@ export default function SecretPage() {
                         </div>
 
                         {/* ── RIGHT: Video ── */}
-                        <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+                        <div className="order-1 lg:order-2 flex flex-col items-center lg:items-end gap-5">
                             <div className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[360px]">
                                 {/* Glow ring */}
                                 <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-b from-primary/30 to-purple-600/20 blur-xl opacity-70" />
@@ -154,6 +154,16 @@ export default function SecretPage() {
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
                                 </div>
                             </div>
+
+                            {/* Mobile-only CTA under video */}
+                            <a
+                                href={STRIPE_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="lg:hidden w-full max-w-[280px] sm:max-w-[320px] text-center rounded-full bg-primary text-black font-bold text-base py-4 shadow-[0_0_30px_rgba(245,158,11,0.45)] hover:bg-primary/90 active:scale-95 transition-all duration-200"
+                            >
+                                🎟 Buy Tickets
+                            </a>
                         </div>
 
                     </div>
