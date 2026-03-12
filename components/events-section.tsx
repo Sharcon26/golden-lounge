@@ -17,53 +17,64 @@ export function EventsSection() {
               </span>
               <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground font-serif tracking-tight leading-tight">
                 Secret Room <br />
-                <span className="text-primary">at GD Lounge</span>
+                <span className="text-primary">Club Night</span>
               </h2>
             </div>
 
             <div className="space-y-6 text-lg text-white/80 font-light leading-relaxed">
               <p className="text-xl font-medium text-white">
-                An immersive, after-dark performance directed by House of Matilda.
+                GD Lounge invites you to an exclusive Secret Room Club Night experience on Friday the 13th.
               </p>
               <p>
-                This is not a traditional show. It’s a fully immersive experience where tension, movement, sound, and emotion unfold around you. Intimate. Cinematic. Unfiltered. The atmosphere builds slowly, pulling you deeper until the final moment lands with full intensity.
+                Enjoy a premium nightlife atmosphere featuring DJ Fresco, explosive choreography, and an immersive and hypnotic show hosted by Matilda that will ignite your imagination with whimsical performances and theatrical magic.
               </p>
               <p>
-                Created for guests who want more than entertainment — they want to feel it.
+                An unforgettable night where you'll be surrounded by sophisticated allure and unforgettable experiences in one of Miami's unique nightlife venues where you can enjoy an upscale Lounge Bar, Secret Room, and VIP karaoke room.
               </p>
-              <p className="italic text-primary/90">
-                Where elegance fades and instinct takes over.
+              <p>
+                Tickets include General Admission standing access or the option to reserve private tables for a more elevated experience.
               </p>
             </div>
 
             <div className="pt-4 border-t border-white/10 space-y-6">
-              <h3 className="text-2xl font-serif font-bold text-white">Event Details</h3>
+              <h3 className="text-2xl font-serif font-bold text-white">VIP Table (6–8 guests) includes:</h3>
               <ul className="space-y-3 text-white/90">
                 <li className="flex items-start gap-3">
                   <span className="text-primary">•</span>
-                  <span><strong>Date:</strong> March 6</span>
+                  <span>1 bottle of Prosecco</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary">•</span>
-                  <span><strong>Venue:</strong> GD Lounge, Downtown Miami</span>
+                  <span>1 bottle of Vodka or Tequila (guest choice)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary">•</span>
-                  <span><strong>Ticket price:</strong> $100 per person</span>
+                  <span>Orange Juice</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary">•</span>
-                  <span><strong>Included:</strong> Champagne + cocktail after the show</span>
+                  <span>Cranberry Juice</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-primary">•</span>
+                  <span>1 bottle of sparkling water</span>
+                </li>
+              </ul>
+              <h3 className="text-xl font-serif font-bold text-white pt-2">Table (2–3 guests) includes:</h3>
+              <ul className="space-y-3 text-white/90">
+                <li className="flex items-start gap-3">
+                  <span className="text-primary">•</span>
+                  <span>1 bottle of Prosecco</span>
                 </li>
               </ul>
             </div>
 
             <div className="pt-2">
               <p className="text-sm text-white/60 tracking-widest uppercase mb-6">
-                Limited seating. One night. One experience.
+                21+ event. Dress to impress and get ready for an unforgettable night.
               </p>
               <Button
-                onClick={() => window.open("https://www.eventbrite.com/e/secret-room-at-gd-lounge-tickets-1981588907766", "_blank")}
+                onClick={() => window.open("https://www.eventbrite.com/e/gd-lounge-presents-secret-room-club-night-tickets-1984784124746", "_blank")}
                 className="w-full sm:w-auto px-8 py-6 text-lg rounded-full"
               >
                 Get Tickets
@@ -82,8 +93,8 @@ export function EventsSection() {
               poster="/Events/events.webp"
               className="absolute inset-0 w-full h-full object-cover"
             >
-              <source src="/Events/IMG_1427.mp4" type="video/mp4" />
-              <source src="/Events/IMG_1427.mp4" type="video/quicktime" />
+              <source src="/Events/13march.MP4" type="video/mp4" />
+              <source src="/Events/13march.MP4" type="video/quicktime" />
               Your browser does not support the video tag.
             </video>
 

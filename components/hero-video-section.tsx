@@ -58,6 +58,37 @@ export function HeroVideoSection() {
             </div>
           </div>
 
+          {/* Secret Room Event CTA */}
+          <div className="flex justify-center">
+            <button
+              onClick={() => {
+                document.getElementById("events")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="group relative inline-flex items-center gap-3 rounded-full border border-primary/60 bg-primary/10 px-6 py-2.5 backdrop-blur-md transition-all duration-300 hover:bg-primary/20 hover:border-primary hover:shadow-[0_0_32px_rgba(245,158,11,0.45)] hover:scale-105"
+            >
+              {/* pulsing dot */}
+              <span className="relative flex h-2.5 w-2.5 shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary" />
+              </span>
+              <span className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
+                Secret Room &nbsp;·&nbsp; March 13
+              </span>
+              {/* arrow */}
+              <svg
+                className="h-3.5 w-3.5 text-primary transition-transform duration-300 group-hover:translate-y-0.5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 5v14M5 12l7 7 7-7" />
+              </svg>
+            </button>
+          </div>
+
           {/* Headline */}
           <div className="space-y-4">
             <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-medium tracking-tight text-white drop-shadow-2xl">
